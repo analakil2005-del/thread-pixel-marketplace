@@ -6,7 +6,7 @@ import { lovable } from "@/integrations/lovable";
 type Search = { mode: "login" | "signup" };
 
 export const Route = createFileRoute("/auth")({
-  validateSearch: (s: Record<string, unknown>): Search => ({ mode: s.mode === "signup" ? "signup" : "login" }),
+  validateSearch: (s: Record<string, unknown>): Search => ({ mode: s["mode"] === "signup" ? "signup" : "login" }),
   head: () => ({
     meta: [
       { title: "Login or Sign up — Mart.Designs" },
